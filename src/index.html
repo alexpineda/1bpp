@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1BPP</title>
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --toolbar-scale: 0.75;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="app" style="display:flex; flex-direction: column;">
+        <div style="display: flex;">
+            <div>
+                <span class="nes-container with-title" style="zoom: var(--toolbar-scale); display: inline-block">
+                    <p class="title">Brush</p>
+                    <div style="display: flex; zoom: var(--toolbar-scale)">
+                        <div class="nes-field" style="margin-right: 1em;">
+                            <label for="name_field">Size</label>
+                            <input type="number" id="brush-scale" class="nes-input" aria-label="brush size" value="2">
+                            <form id="brush-scale-preset" style="margin-top: 1rem;">
+                                <label>
+                                    <input type="radio" class="nes-radio" name="scale-preset" value="2" />
+                                    <span>2</span>
+                                </label>
+                                <label>
+                                    <input type="radio" class="nes-radio" name="scale-preset" value="5" />
+                                    <span>5</span>
+                                </label>
+                                <label>
+                                    <input type="radio" class="nes-radio" name="scale-preset" value="10" />
+                                    <span>10</span>
+                                </label>
+                                <label>
+                                    <input type="radio" class="nes-radio" name="scale-preset" value="30" />
+                                    <span>30</span>
+                                </label>
+                            </form>
+                        </div>
+                        <div class="nes-container with-title" style=" display: inline-block">
+                            <p class="title">Interpolate Line</p>
+                            <form id="brush-interpolate">
+                                <label>
+                                    <input type="radio" class="nes-radio" name="interpolate" value="off" />
+                                    <span>Off</span>
+                                </label>
+                                <label>
+                                    <input type="radio" class="nes-radio" name="interpolate" checked value="linear" />
+                                    <span>Linear</span>
+                                </label>
+                        </div>
+                    </div>
+                    </form>
+            </div>
+            <span class="nes-container with-title" style="zoom: var(--toolbar-scale); display: inline-block">
+                <p class="title">Canvas</p>
+                <div style="display: flex; zoom: var(--toolbar-scale);">
+                    <span class="nes-container with-title" style=" display: inline-block">
+                        <p class="title">Scale</p>
+                        <form id="scale">
+                            <label>
+                                <input type="radio" class="nes-radio" name="answer" value="1" />
+                                <span>1x</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" class="nes-radio" name="answer" value="2" />
+                                <span>2x</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" class="nes-radio" name="answer" value="3" checked />
+                                <span>3x</span>
+                            </label>
+                        </form>
+                    </span>
+                </div>
+            </span>
+        </div>
+
+
+        <canvas id="canvas" width="160" height="160" style="width: 480px; height:480px;" oncontextmenu="return false">No
+            Canvas</canvas>
+
+        <section aria-label="toolbar">
+            <a class="nes-btn" href="#" id="download-png">Download PNG(s)</a>
+            <a class="nes-btn is-error" href="#" id="download-png">Clear</a>
+        </section>
+    </main>
+    <script type="module" src="index.ts"></script>
+</body>
+
+</html>
